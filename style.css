@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+.app-name {
+    text-align: center;
+}
+
+#formSubmit {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#formSubmit div label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#formSubmit div input {
+    width: 300px;
+    height: 25px;
+    font-size: 16px;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#formSubmit div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.form-btn-grp button {
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.form-btn-grp>button {
+    background: #33d155;
+    color: #fff;
+}
+
+.form-btn-grp>button:hover {
+    background: #fff;
+    color: #33d155;
+    border: 2px solid #33d155;
+}
+
+/* .form-btn-grp>a>button {
+    background-color: #194cddd4;
+    color: #fff;
+}
+
+.form-btn-grp>a>button:hover {
+    background-color: #fff;
+    color: #194cddd4;
+    border: 2px solid #194cddd4;
+} */
+
+.form-grp {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* --------------------- */
+.emp-card-lists{
+        border: 2px solid black;
+    border-radius: 10px;
+}
+
+.emp-card-lists h2 {
+    margin: 30px 10px 10px;
+}
+
+.emp-card {
+    /* border: 2px solid #d435e7; */
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #ff81009c;
+}
+
+.emp-card h3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.emp-card h3 span {
+    background-color: #fff;
+    width: 70%;
+    padding: 5px;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.emp-card h3 span::-webkit-scrollbar {
+    display: none;
+}
+
+.emp-card:hover {
+    box-shadow: 0px 0px 10px 4px rgb(44 44 44);
+}
+
+.empList {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.emp-card span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.btn-grp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-grp button {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-grp button:first-child {
+    background-color: rgb(88, 27, 230);
+}
+
+.btn-grp button:first-child:hover {
+    background-color: #fff;
+    color: rgb(88, 27, 230);
+    border: 2px solid rgb(88, 27, 230);
+}
+
+/* .btn-grp button:nth-child(2) {
+    background-color: #09b509;
+}
+
+.btn-grp button:nth-child(2):hover {
+    background-color: #fff;
+    color: #09b509;
+    border: 2px solid #09b509;
+} */
+
+.btn-grp button:nth-child(2) {
+    background-color: #ff0000;
+}
+
+.btn-grp button:nth-child(2):hover {
+    background-color: #fff;
+    color: #ff0000;
+    border: 2px solid #ff0000;
+}
