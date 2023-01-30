@@ -1,3 +1,36 @@
 {
-  "employee": []
+  "employee": [
+    {
+      "id": 2,
+      "empName": "efgh",
+      "email": "efgh@gmail.com",
+      "phone": "987654321",
+      "jobRole": "software developer",
+      "salary": "20000000"
+    },
+    {
+      "id": 5,
+      "empName": "ijkl",
+      "email": "ijkl@gmail.com",
+      "phone": "741852963",
+      "jobRole": "backend developer",
+      "salary": "10000000"
+    },
+    {
+      "empName": "Obama",
+      "email": "obamaamerica@captain.com",
+      "phone": "00000000000000",
+      "jobRole": "ex-president",
+      "salary": "5041240120222255555555",
+      "id": 6
+    },
+    {
+      "empName": "Hulk",
+      "email": "Hulkcaptain@Marvel.com",
+      "phone": "78459621471",
+      "jobRole": "Fight",
+      "salary": "457126458",
+      "id": 7
+    }
+  ]
 }

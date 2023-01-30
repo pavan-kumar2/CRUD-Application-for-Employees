@@ -7,21 +7,22 @@ let idOfEmp;
 formSubmit.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    if (isEditing == false) {
-        // let empId = document.getElementById("id").value
-        let empName = document.getElementById("empName").value;
-        let email = document.getElementById("email").value;
-        let phone = document.getElementById("phone").value;
-        let jobRole = document.getElementById("jobRole").value;
-        let salary = document.getElementById("salary").value;
+    let id = document.getElementById("id").value
+    let empName = document.getElementById("empName").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let jobRole = document.getElementById("jobRole").value;
+    let salary = document.getElementById("salary").value;
 
-        let empdata = {
-            empName,
-            email,
-            phone,
-            jobRole,
-            salary
-        };
+    let empdata = {
+        empName,
+        email,
+        phone,
+        jobRole,
+        salary
+    };
+
+    if (isEditing == false) {
 
         fetch("http://localhost:3000/employee", {
                 method: "POST",
@@ -36,12 +37,6 @@ formSubmit.addEventListener("submit", function (e) {
                 console.log(err.message)
             })
     } else {
-        let id = document.getElementById("id").value
-        let empName = document.getElementById("empName").value;
-        let email = document.getElementById("email").value;
-        let phone = document.getElementById("phone").value;
-        let jobRole = document.getElementById("jobRole").value;
-        let salary = document.getElementById("salary").value;
 
         let empdata = {
             id,
@@ -73,17 +68,17 @@ let empList = document.getElementById("empList");
 
 fetch("http://localhost:3000/employee")
     .then((response) => response.json())
-    .then((data) => {
+    .then((emplyeesData) => {
         // console.log(data);
-        data.forEach(ele => {
+        emplyeesData.forEach(employee => {
             empList.innerHTML += `<div class="emp-card">
-            <h3>Id: <span>${ele.id}</span></h3>
-        <h3>Name: <span>${ele.empName}</span></h3>
-        <h3>Email: <span>${ele.email}</span></h3>
-        <h3>Phone: <span>${ele.phone}</span></h3>
-        <h3>Job Role: <span>${ele.jobRole}</span></h3>
-        <h3>Salary: <span>${ele.salary}</span></h3>
-        <div class='btn-grp'><button onclick="editEmp(${ele.id})">Edit</button><button onclick="deleteEmp(${ele.id})">Delete</button></div>
+            <h3>Id: <span>${employee.id}</span></h3>
+        <h3>Name: <span>${employee.empName}</span></h3>
+        <h3>Email: <span>${employee.email}</span></h3>
+        <h3>Phone: <span>${employee.phone}</span></h3>
+        <h3>Job Role: <span>${employee.jobRole}</span></h3>
+        <h3>Salary: <span>${employee.salary}</span></h3>
+        <div class='btn-grp'><button onclick="editEmp(${employee.id})">Edit</button><button onclick="deleteEmp(${employee.id})">Delete</button></div>
         </div>`
         });
     }).catch((err) => console.log(err.message));
@@ -111,21 +106,25 @@ let salaryEmp = document.getElementById("salary");
 function editEmp(id) {
     fetch("http://localhost:3000/employee/" + id)
         .then((responseData) => responseData.json())
-        .then((resData) => {
+        .then((empData) => {
             // console.log(resData);
 
-            idEmp.value = resData.id;
-            nameEmp.value = resData.empName;
-            emailEmp.value = resData.email;
-            phoneEmp.value = resData.phone;
-            jobRoleEmp.value = resData.jobRole;
-            salaryEmp.value = resData.salary;
+            idEmp.value = empData.id;
+            nameEmp.value = empData.empName;
+            emailEmp.value = empData.email;
+            phoneEmp.value = empData.phone;
+            jobRoleEmp.value = empData.jobRole;
+            salaryEmp.value = empData.salary;
 
         }).catch((errMsg) => console.log(errMsg.message));
 
     idOfEmp = id;
 
     isEditing = true;
+
+    let addEmp = document.querySelector(".add-emp");
+
+    addEmp.innerHTML = " <h2>Edit Employee:</h2>";
 
     let formGrp = document.querySelector('.form-grp');
 
